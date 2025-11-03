@@ -1,0 +1,7 @@
+# .gitignore 추가하기
+# .vscode는 현재 프로젝트의 VS Code 설정 정보가 들어 있는 폴더
+# 삭제해도 상관없지만 프로젝트를 열면 다시 생성되니 일반적으로는 무시하면 된다
+
+.idea
+.vscode
+.DS_Store
