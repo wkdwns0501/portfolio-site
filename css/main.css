@@ -1,0 +1,407 @@
+/* COMMON */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  /* 스크롤 이동을 부드럽게 */
+  scroll-behavior: smooth;
+}
+
+body {
+  /* 글자 관련 기본(공통) 스타일 추가 */
+  /* font-family: 1순위, 2순위 ... , sans-serif(고딕 계열) */
+  font-family: "Open Sans", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333; /* ex) #ffee33 = #fe3 */
+  /* 고정된 헤더 테스트용 */
+  /* height: 3000px; */
+} 
+
+/* 영문에만 적용할 폰트 */
+/* .font-en {
+  font-family: "Open Sans", sans-serif;
+} */
+
+a {
+  text-decoration: none;
+  color: inherit; /* 부모 요소의 글자색을 물려받음(상속) */
+}
+
+.inner {
+  max-width: 1200px;
+  /* 가로 너비를 가진 블록 요소의 가운데 정렬 */
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: #333;
+  /* 가로 길이를 갖는 block 요소는 margin: auto로 가운데 정렬 효과를 줄 수 있다 */
+  margin: 24px auto 0;
+}
+
+img {
+  /* 이미지가 inline 요소라서 발생하는 문자 기준선(Baseline) 아래의 공간을 제거하기 위해 */
+  display: block;
+}
+
+.btn {
+  display: block;
+  width: 120px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer; /* a태그라서 필요X */
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn-purple {
+  color: #9b30ff;
+  border-color: #9b30ff;
+}
+.btn.btn-purple:hover {
+  color: #fff;
+  background-color: #9b30ff;
+}
+.btn.btn-brown {
+  color: #592b18;
+  border-color: #592b18;
+}
+.btn.btn-brown:hover {
+  color: #fff;
+  background-color: #592b18;
+}
+
+.animate-flash {
+  animation: flash;
+  animation-duration: 0.5s;
+  /* animation-timing-function: ease-in-out; */
+  /* animation-delay: 3s; */
+  /* animation-iteration-count: infinite; */
+}
+
+/* HEADER */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #c8c8c8;
+  box-shadow: 0 2px 8px rgba(204, 204, 204, 0.8);
+  /* 고정된 헤더 만들기 */
+  position: fixed; /* ViewPort (사용자 창) 기준 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+header > .inner {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* row 일때만, 만약 column 이라면 반대가 된다 */
+  /* justify-conent : 주축정렬 (수평) */
+  /* align-items : 교차축 정렬 (수직) */
+}
+header .logo img {
+  width: 40px;
+}
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  padding: 10px 20px;
+  font-weight: bold; /* =700 */
+}
+header nav ul li a {
+  position: relative; /* 자기 기준, 다른요소에 영향X */
+}
+header nav ul li a:hover {
+  color: #9b30ff;
+}
+header nav ul li a::after { 
+  /* ::after - 가상 요소의 장점은 HTML 구조 추가와 class 속성값의 추가 없이 구현 및 제어 가능 */
+  content: ""; /* 가상 요소 사용시 필수 속성 */
+  /* 밑줄 */
+  display: block; /* 가상 요소는 inline 이라서 가로,세로 속성 적용X */
+  width: 0%; /* 초기에는 밑줄이 안보이도록 0으로 설정 */
+  height: 2px;
+  background-color: #9b30ff;
+  transition: 0.5s; /* 밑줄이 생기고 사라지는 효과 설정 */
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+}
+header nav ul li a:hover::after {
+  width: 100%;
+  /* animation-name: underline1;
+  animation-duration: 0.5s; */
+}
+/* @keyframes underline1 {
+  from {width: 0%;}
+  to {width: 100%;}
+} */
+
+/* VISUAL */
+.visual {
+  /* 
+    헤더가 fixed 되어 일반 배치 흐름에서 벗어남 (주변 요소들과 상호작용하지 않음)
+    헤더 다음에 오는 요소는 헤더의 높이 만큼 외부 여백 추가
+  */
+  margin-top: 60px;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+}
+.visual > .inner {
+  /* calc() : CSS에서 연산을 할때 사용하는 함수*/
+  height: calc(100vh - 60px); /* 첫 번째 섹션이 뷰포트에 가득 차도록 */
+  font-size: 70px;
+  display: flex;
+  align-items: center;
+}
+.visual > .inner .purple {
+  color: #9b30ff;
+}
+
+/* ABOUT */
+/* 보통 section들 자체는 padding으로 여백 */
+/* 보통 section안에 요소들은 margin으로 여백 */
+/* 선택자 중요도 점수 - Specificity: (id개수,class개수,tag개수) */
+/* 총 점수 =  id개수x100 + class개수x10 + tag개수x1 */
+.about {
+  padding: 150px 0;
+}
+.about > .inner { 
+  /* 자식 요소의 기준 */
+  position: relative;
+}
+.about .about-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.about .about-wrap .about-img {
+  width: 40%;
+}
+.about .about-wrap .about-img img{
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.1); 
+}
+.about .about-wrap .about-text {
+  width: 40%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.about .about-wrap .about-text .slogan {
+  font-size: 35px;
+  font-weight: bold;
+}
+.about .about-wrap .about-text h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.about .about-wrap .about-text h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.about .about-wrap .about-text li {
+  line-height: 1.8;
+}
+.about .about-btn {
+  position: absolute;
+  bottom: -30px;
+  right: 30px;
+}
+/* .about .about-btn a {
+  display: flex;
+  align-items: center;
+} */
+.about .about-btn img {
+  display: inline;
+  /* 이미지와 글자의 정렬을 맞출때 사용 */
+  vertical-align: middle;
+  width: 28px;
+  margin-right: 10px;
+}
+
+/* SKILL */
+.skill {
+  padding: 150px 0;
+  background-color: #000;
+  color: #fff;
+}
+.skill .title::after {
+  background-color: #fff;
+}
+.skill .skill-list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  gap: 30px;
+  text-align: center;
+}
+.skill .skill-list > li  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 애니메이션 효과 추가 */
+  /* 방법1: position */
+  /* position: relative; 기준 : 자기 자신 */
+  /* top: 100px; */
+  /* 방법2: transform */
+  transform: translateY(100px);
+  opacity: 0.1;
+}
+/* hover로 먼저 테스트 후 스크롤 이벤트 넣기 */
+/* .skill .skill-list > li:hover { */
+.skill.show .skill-list > li {
+  /* 방법1: position */
+  /* top: 0px; */
+  /* 방법2: transform */
+  transform: translateY(0);
+  transition: 0.4s;
+  opacity: 1;
+}
+.skill.show .skill-list > li:nth-child(1) {transition-delay: 0.2s;}
+.skill.show .skill-list > li:nth-child(2) {transition-delay: 0.4s;}
+.skill.show .skill-list > li:nth-child(3) {transition-delay: 0.6s;}
+.skill.show .skill-list > li:nth-child(4) {transition-delay: 0.8s;}
+.skill.show .skill-list > li:nth-child(5) {transition-delay: 1s;}
+.skill.show .skill-list  li h3{
+  width: 50px;
+  height: 40px;
+  background-color: #9b30ff;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: bold;
+  /* 자간 */
+  letter-spacing: -2px;
+  /* 음수는  */
+  transform: rotate(-20deg);
+  transition: 0.3s;
+}
+.skill .skill-list li:hover h3 {
+  transform: rotate(0deg);
+}
+.skill .skill-list li h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 30px 0 20px;
+}
+
+/* PROJECT */
+.project {
+  padding: 150px 0;
+}
+.project .port {
+  display: flex;
+  margin: 20px 0;
+}
+.project .port .port-img,
+.project .port .port-text {
+  width: 50%;
+  height: 400px;
+}
+.project .port .port-img .swiper {
+  width: 100%;
+  height: 100%;
+}
+.project .port .port-img .swiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 원본 이미지 비율에 맞게 (여백 O) */
+  /* object-fit: cover; 영역에 꽉 차게 (짤림) */
+}
+.project .port .port-text {
+  padding: 30px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.project .port .port-text h3 {
+  font-size: 20px;
+  font-weight: 800;
+}
+.project .port .port-text li {
+  line-height: 1.8;
+}
+.project .port .port-text li span {
+  font-weight: bold;
+}
+.project .port .btn-group {
+  display: flex;
+  column-gap: 40px;
+}
+
+/* MODAL */
+#imgModal {
+  /* 화면(뷰포트) 전체 영역 덮기 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  display: none; /* 초기에는 숨김 상태 */
+}
+#imgModal .modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+}
+#imgModal .modal-header {
+  padding: 16px;
+  background-color: #222;
+  color: #fff;
+  border-radius: 8px 8px  0 0;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#imgModal .modal-header .close-btn {
+  font-size: 30px;
+  cursor: pointer;
+}
+#imgModal .modal-header .close-btn:hover {
+  color: #c8c8c8;
+}
+#imgModal .modal-body {
+  padding: 16px;
+}
+
+
+/* 애니메이션 정의는 맨 마지막에 */
+/* @ : CSS 정의 */
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
