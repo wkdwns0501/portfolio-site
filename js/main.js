@@ -110,3 +110,18 @@ window.addEventListener('scroll', function () {
     });
   }
 });
+
+const menuBtn = document.querySelector(".btn-hamburger");
+const navEl = document.querySelector('header nav');
+console.log(navEl)
+
+menuBtn.addEventListener('click', function() {
+  // if (navEl.classList.contains('active')) {
+  //   navEl.classList.remove('active');
+  // } else {
+  //   navEl.classList.add('active');
+  // }
+
+  navEl.classList.toggle('active');
+})
+

@@ -155,7 +155,8 @@ header nav ul li a::after {
   bottom: -4px;
 }
 header nav ul li a:hover::after {
-  width: 100%;
+  /* 밑줄 길이 */
+  width: 94%;
   /* animation-name: underline1;
   animation-duration: 0.5s; */
 }
@@ -163,6 +164,15 @@ header nav ul li a:hover::after {
   from {width: 0%;}
   to {width: 100%;}
 } */
+header .btn-hamburger {
+  display: none;
+}
+header .btn-hamburger .material-symbols-outlined {
+  font-size: 40px;
+  /* 수직 정렬 맞추기 */
+  display: block;
+  /* line-height: 60px; */
+}
 
 /* VISUAL */
 .visual {
@@ -485,6 +495,137 @@ footer .copyright {
   /* 수직 정렬 맞추기 */
   /* display: block; */
   line-height: 42px;
+}
+
+/* 반응형 스타일 */
+/* (참고1) 일반적인 중단점(분기점, Break Point)
+  1. 5개 기준(매우 복잡)
+  ~ 479px : 모바일 세로
+  480px ~ 767px : 모바일 가로, 태블릿 세로
+  768px ~ 1023px : 태블릿 가로
+  1024px ~ 1279px : 노트북
+  1280px ~ : 데스크톱
+
+  2. 4개 기준(복잡)
+  ~ 479px : 모바일 세로
+  480px ~ 767px : 모바일 가로, 태블릿 세로
+  768px ~ 1023px : 태블릿 가로
+  1024px ~ : 데스크톱
+
+  3. 3개 기준(일반적, Good)
+  ~ 767px : 모바일 (1열 정렬)
+  768px ~ 1023px : 태블릿 (2열 정렬)
+  1024px ~ : 데스크톱 (3열 이상)
+
+  4. 2개 기준(일반적, Normal)
+  ~ 767px : 모바일
+  768px ~ : 태블릿, 데스크톱
+*/
+/* (참고2) 부트스트랩에서 사용하는 중단점
+  1200px / 992px / 768px / 576px
+
+  1200px / 992px 중 어디부터 태블릿 사이즈로 볼지
+  768px / 576px 중 어디부터 모바일 사이즈로 볼지는 선택 사항
+*/
+/* 장치가 화면이고 최대 너비가 767일때 (=> 767px 이하에서)*/
+@media screen and (max-width: 767px) {
+  /* 모바일에서는 화면의80%만 차지하도록 */
+  .inner {
+    width: 80%;
+  }
+  .title {
+    font-size: 30px;
+    margin-bottom: 24px;
+  }
+  .title::after {
+    width: 60px;
+  }
+  header .btn-hamburger {
+    display: block;
+  }
+  header nav {
+    background-color: #fff8e8;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: scroll;
+    transition: 0.3s;
+  }
+  header nav.active {
+    height: 100%;
+  }
+  header nav ul {
+    flex-direction: column;
+    padding-top: 60px;
+  }
+  header nav ul li {
+    padding: 10px 80px;
+    font-size: 30px;
+  }
+  header nav ul li a {
+    transition: 0.6s;
+  }
+  header nav ul li a:hover {
+    letter-spacing: 7px;
+  }
+
+  .visual > .inner {
+    font-size: 30px;
+  }
+  .visual > .inner .mobile-lf {
+    display: inline !important;
+  }
+
+  .about {
+    padding: 100px 0;
+  }
+  .about .about-wrap {
+    flex-direction: column;
+  }
+
+  .about .about-wrap .about-img {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .about .about-wrap .about-text {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .skill {
+    padding: 100px 0;
+  }
+
+    .project {
+    padding: 100px 0;
+  }
+  .project .port {
+    flex-direction: column;
+    margin: 40px 0;
+  }
+  .project .port .port__img, 
+  .project .port .port__text {
+    width: 100%;
+  }
+  .project .port .port__text {
+    padding: 20px 0 0;
+  }
+  .project .port .btn-group {
+    margin-top: 20px;
+  }
+
+    .contact {
+    padding: 100px 0;
+  }
+  
+  #imgModal .modal-content {
+    width: 80%;
+  }
+  #imgModal .modal-body img {
+    width: 100%;
+  }
 }
 
 /* 애니메이션 정의는 맨 마지막에 */
