@@ -605,11 +605,11 @@ footer .copyright {
     flex-direction: column;
     margin: 40px 0;
   }
-  .project .port .port__img, 
-  .project .port .port__text {
+  .project .port .port-img, 
+  .project .port .port-text {
     width: 100%;
   }
-  .project .port .port__text {
+  .project .port .port-text {
     padding: 20px 0 0;
   }
   .project .port .btn-group {

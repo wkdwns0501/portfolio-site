@@ -113,7 +113,9 @@ window.addEventListener('scroll', function () {
 
 const menuBtn = document.querySelector(".btn-hamburger");
 const navEl = document.querySelector('header nav');
-console.log(navEl)
+const menuItems = document.querySelectorAll('header nav ul  li a');
+// console.log(navEl)
+// cosole.log(menuItems)
 
 menuBtn.addEventListener('click', function() {
   // if (navEl.classList.contains('active')) {
@@ -125,3 +127,8 @@ menuBtn.addEventListener('click', function() {
   navEl.classList.toggle('active');
 })
 
+menuItems.forEach(menuItem => {
+  menuItem.addEventListener('click', function() {
+    navEl.classList.remove('active');
+  })
+});
