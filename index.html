@@ -3,173 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jun's Portfolio</title>
 
-  <!-- 오픈 그래프와 트위터 카드 설정(링크의 프리뷰) -->
-  <!-- 오픈 그래프 -->
-  <!-- 웹페이지가 소셜미디어(카카오톡, 슬랙, 페이스북 등)로 공유될 때 우선적으로 활용되는 정보 -->
-  <!-- 
-    type: 사이트 타입(website로 고정하면 됨)
-    site_name: 웹사이트 이름, 브랜드 네임을 쓰면 좋음(ex. Goni's Portfolio, Goni.dev, MyPortfolio)
-    title: 현재 페이지의 제목
-    description: 간단한 소개(검색, 공유 시 미리보기에서 사용)
-    image: 썸네일 이미지(가장 중요함!), 절대 경로로 작성하는 것을 권장(https://부터 시작), 권장 크기(1200x630px 정도)
-    url: 현재 사이트의 대표 URL
-  -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Goni's Portfolio" />
-  <meta property="og:title" content="Goni | Full Stack Developer" />
-  <meta property="og:description" content="React, Node.js 기반의 웹 개발을 전문으로 하는 풀스택 개발자 포트폴리오입니다." />
-  <meta property="og:image" content="https://your-domain.com/images/thumbnail.png" />
-  <meta property="og:url" content="https://your-domain.com" />
+  <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
 
-  <!-- 트위터 카드 -->
-  <!-- 웹페이지가 소셜미디어(트위터)로 공유될 때 우선적으로 활용되는 정보 -->
-  <!-- 
-    card: 카드 유형 지정
-      └summary: 작은 썸네일 + 텍스트 요약
-      └summary_large_image: 큰 썸네일 + 텍스트 요약
-  -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <!-- 계정 태그 노출용 작성자 트위터 계정(없으면 생략 가능) -->
-  <!-- <meta name="twitter:site" content="@your_twitter_handle" />
-  <meta name="twitter:creator" content="@your_twitter_handle" /> -->
-  <meta property="twitter:title" content="Goni | Full Stack Developer" />
-  <meta property="twitter:description" content="React, Node.js 기반의 웹 개발을 전문으로 하는 풀스택 개발자 포트폴리오입니다." />
-  <meta property="twitter:image" content="https://your-domain.com/images/thumbnail.png" />
-  <meta property="twitter:url" content="https://your-domain.com" />
-
-  <title>Full Stack Developer</title>
-  <!-- 파비콘 적용 -->
-  <!-- 
-    파비콘(favicon.ico)은 프로젝트 최상위 폴더(root) 경로에 포함시키면 자동으로 적용
-    최상위 경로에 없거나, ico가 아닌 별도 파일을 가진 경우에는 <link>태그로 적용
-  -->
-  <link rel="icon" href="favicon/faviconD.ico">
-  <!-- (참고) 파비콘 만들기: https://iconifier.net -->
-
-  <!-- reset.css 적용 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
-
-  <!-- 구글 웹폰트 연결 -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-  
-  <!-- 구글 머티리얼 아이콘 연결-->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
-
-  <!-- 내 css 파일 적용 (순서 주의) -->
-  <link rel="stylesheet" href="./css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
   
-  <!-- ScrollMagic 라이브러리 연결 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <!-- Pretendard + Inter -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- defer : 웹 문서를 다 읽은 후 스크립트를 적용시키도록 지연 -->
-  <script src="js/main.js" defer></script>
+  <link rel="stylesheet" href="./css/Portfolio.css">
+
+  <script src="js/Portfolio.js" defer></script>
 
 </head>
 <body>
   <!-- HEADER -->
   <header>
     <div class="inner">
-      <!-- 로고 -->
-      <a href="index.html" class="logo">
-        <img src="images/logoD.png" alt="로고">
+      <a href="Portfolio.html" class="logo">
+        <img src="images/logo.png" alt="로고">
+        <span class="logo-text">Jun's Portfolio</span>
       </a>
-      <!-- 메뉴 -->
-      <nav>
+      <button class="menu-toggle" aria-label="메뉴 열기" aria-controls="siteNav" aria-expanded="false">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      <nav id="siteNav">
         <ul>
-          <!-- 본인의 메뉴 구조에 맞게 변경 -->
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#skill">SKILL</a></li>
-          <li><a href="#project">PROJECT</a></li>
-          <li><a href="#contact">CONTACT</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#skill">Skills</a></li>
+          <li><a href="#project">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-
-      <!-- 메뉴 버튼 -->
-      <a href="javascipt:void(0)" class="btn-hamburger">
-        <span class="material-symbols-outlined">menu</span>
-      </a>
     </div>
   </header>
+  <div class="nav-backdrop"></div>
 
   <!-- VISUAL -->
-  <!-- 첫 화면에 눈길을 끌 수 있는 자기 소개하는 내용 담기 -->
-  <section class="visual">
-    <div class="inner">
-      <h1>
-        <span class="animate-flash" style="animation-delay: 0.04s;">반</span>
-          <span class="animate-flash" style="animation-delay: 0.26s;">짝</span>
-          <span class="animate-flash" style="animation-delay: 0.08s;">반</span>
-          <span class="animate-flash" style="animation-delay: 0.02s;">짝</span>
-          &nbsp;
-          <span class="animate-flash purple" style="animation-delay: 0.26s;">빛</span>
-          <span class="animate-flash purple" style="animation-delay: 0.06s;">나</span>
-          <span class="animate-flash purple" style="animation-delay: 0.14s;">는</span>
-          <br>
-          <span class="animate-flash" style="animation-delay: 0.06s;">F</span>
-          <span class="animate-flash" style="animation-delay: 0.28s;">u</span>
-          <span class="animate-flash" style="animation-delay: 0.12s;">l</span>
-          <span class="animate-flash" style="animation-delay: 0.15s;">l</span>
-          &nbsp;
-          <span class="animate-flash" style="animation-delay: 0.02s;">S</span>
-          <span class="animate-flash" style="animation-delay: 0.22s;">t</span>
-          <span class="animate-flash" style="animation-delay: 0.17s;">a</span>
-          <span class="animate-flash" style="animation-delay: 0.19s;">c</span>
-          <span class="animate-flash" style="animation-delay: 0.20s;">k</span>
-          &nbsp;<br class="mobile-lf" style="display: none;">
-          <span class="animate-flash purple" style="animation-delay: 0.11s;">D</span>
-          <span class="animate-flash purple" style="animation-delay: 0.18s;">e</span>
-          <span class="animate-flash purple" style="animation-delay: 0.05s;">v</span>
-          <span class="animate-flash purple" style="animation-delay: 0.06s;">e</span>
-          <span class="animate-flash purple" style="animation-delay: 0.09s;">l</span>
-          <span class="animate-flash purple" style="animation-delay: 0.24s;">o</span>
-          <span class="animate-flash purple" style="animation-delay: 0.28s;">p</span>
-          <span class="animate-flash purple" style="animation-delay: 0.14s;">e</span>
-          <span class="animate-flash purple" style="animation-delay: 0.25s;">r</span>
-          <br>
-          <span class="animate-flash purple" style="animation-delay: 0.10s;">김</span>
-          <span class="animate-flash purple" style="animation-delay: 0.16s;">재</span>
-          <span class="animate-flash purple" style="animation-delay: 0.24s;">현</span>
-          <span class="animate-flash" style="animation-delay: 0.12s;">입</span>
-          <span class="animate-flash" style="animation-delay: 0.15s;">니</span>
-          <span class="animate-flash" style="animation-delay: 0.05s;">다</span>
-          <span class="animate-flash" style="animation-delay: 0.13s;">.</span>
-      </h1>
+  <section class="visual" id="visual" aria-label="Introduction">
+  <!-- 장식 애니메이션 레이어 -->
+  <div class="hero-art" aria-hidden="true"></div>
+  <div class="inner visual-content">
+    <h1 class="hero-title reveal-loop">
+      데이터 흐름을 설계하고, <br>안정성을 구축하는 백엔드 개발자 <br><span>장준</span>입니다.
+    </h1>
+    <p class="lead reveal-loop">Spring Boot · Java · REST API · AWS</p>
+    <!-- 필요하면 CTA 버튼 추가
+    <div class="actions">
+      <a class="btn primary" href="#project">프로젝트 보기</a>
+      <a class="btn" href="#contact">연락하기</a>
     </div>
+    -->
+  </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about" class="about">
     <div class="inner">
-      <h2 class="title">ABOUT</h2>
-      <div class="about-wrap">
+      <h2 class="title">
+        <span class="main">ABOUT</span>
+        <span class="subtitle">Who I Am</span>
+      </h2>
+      <div class="about-wrap reveal-once">
         <div class="about-img">
-          <!-- 본인 프로필 이미지 -->
-          <img src="images/profile.jpg" alt="프로필">
+          <img src="images/Profile.png" alt="프로필">
         </div>
         <div class="about-text">
-          <!-- 본인 슬로건, 이름, 학력 또는 교육사항 등 작성 -->
-          <strong class="slogan">Simple is Best</strong>
-          <h3>Kim Jae Hyun (1900.10.15)</h3>
+          <strong class="slogan">Reliable Systems, Simple Code</strong>
+          <h3>Chang Jun (1999.05.01)</h3>
           <div>
             <h4>EDUCATION</h4>
             <ul>
-              <li>10.03 ~ 12.02 00학교 00과 졸업</li>
-              <li>25.04 ~ 25.10 클라우드(AWS)활용 자바/스프링 개발 부트캠프 수료</li>
+              <li>18.03 ~ 24.02 - OO학교 OO과 졸업</li>
+              <li>23.06 ~ 23.11 - 융합 웹 애플리케이션 개발자 양성 과정 수료</li>
+              <li>25.10 ~ 26.04 - 클라우드(AWS)활용 자바/스프링 개발 부트캠프 수료</li>
+            </ul>
+          </div>
+          <div>
+            <h4>CERTIFICATE</h4>
+            <ul>
+              <li>정보처리기사 - (2024)</li>
+              <li>SQLD (SQL Developer) - (2023)</li>
             </ul>
           </div>
         </div>
       </div>
-      <!-- 연락처 버튼 -->
-      <div class="about-btn">
+
+      <div class="about-btn reveal">
         <a href="#contact">
           <img src="images/icon/icon_contact.png" alt="연락처">CONTACT
         </a>
@@ -178,165 +108,287 @@
   </section>
 
   <!-- SKILL -->
-  <section id="skill" class="skill scroll-spy">
+  <section id="skill" class="skill">
     <div class="inner">
-      <h2 class="title">SKILL</h2>
-      <ul class="skill-list">
-        <li>
-          <h3>Java</h3>
-          <h4>Java<br>Programing</h4>
-          <ul>
-            <li>객체지향</li>
-            <li>파일 입출력</li>
-            <li>JDBC</li>
+      <h2 class="title">
+        <span class="main">SKILL</span>
+        <span class="subtitle">What I Use</span>
+      </h2>
+      <div class="skill-groups">
+        <!-- 언어 -->
+        <section class="skill-group reveal-once">
+          <h3 class="skill-group-title">Language</h3>
+          <ul class="skill-items">
+            <li class="skill-item"><img src="images/svg/Java.svg" alt="Java" class="skill-icon svg"><span class="skill-name">Java</span></li>
+            <li class="skill-item"><img src="images/svg/JavaScript.svg" alt="JavaScript" class="skill-icon svg"><span class="skill-name">JavaScript</span></li>
           </ul>
-        </li>
-        <li>
-          <h3>Html</h3>
-          <h4>HTML5</h4>
-          <ul>
-            <li>웹페이지 구조 설계</li>
-            <li>시맨틱 태그</li>
+        </section>
+
+        <!-- 프론트엔드 -->
+        <section class="skill-group reveal-once">
+          <h3 class="skill-group-title">Frontend</h3>
+          <ul class="skill-items">
+            <li class="skill-item"><img src="images/svg/HTML5.svg" alt="HTML5" class="skill-icon svg"><span class="skill-name">HTML5</span></li>
+            <li class="skill-item"><img src="images/svg/CSS3.svg" alt="CSS3" class="skill-icon svg"><span class="skill-name">CSS3</span></li>
+            <li class="skill-item"><img src="images/svg/jQuery.svg" alt="jQuery" class="skill-icon svg"><span class="skill-name">jQuery</span></li>
+            <!-- <li class="skill-item"><img src="images/svg/AJAX.svg" alt="AJAX" class="skill-icon svg"><span class="skill-name">AJAX</span></li> -->
+            <li class="skill-item"><img src="images/svg/React.svg" alt="React" class="skill-icon svg"><span class="skill-name">React</span></li>
+            <!-- <li class="skill-item"><img src="images/svg/Swiper.svg" alt="Swiper" class="skill-icon svg"><span class="skill-name">Swiper</span></li> -->
+            <li class="skill-item"><img src="images/svg/Bootstrap.svg" alt="Bootstrap" class="skill-icon svg"><span class="skill-name">Bootstrap</span></li>
+            <!-- <li class="skill-item"><img src="images/svg/Babel.svg" alt="Babel" class="skill-icon svg"><span class="skill-name">Babel</span></li> -->
           </ul>
-        </li>
-        <li>
-          <h3>Css</h3>
-          <h4>CSS3</h4>
-          <ul>
-            <li>웹페이지 레이아웃 설계</li>
-            <li>웹페이지 디자인</li>
-            <li>반응형 제작</li>
+        </section>
+
+        <!-- 백엔드 -->
+        <section class="skill-group reveal-once">
+          <h3 class="skill-group-title">Backend</h3>
+          <ul class="skill-items">
+            <li class="skill-item"><img src="images/svg/Spring.svg" alt="Spring" class="skill-icon svg"><span class="skill-name">Spring</span></li>
+            <li class="skill-item"><img src="images/svg/JSP.png" alt="JSP & Servlet" class="skill-icon svg"><span class="skill-name">JSP & Servlet</span></li>
+            <!-- <li class="skill-item"><img src="images/svg/Mybatis.svg" alt="Mybatis" class="skill-icon svg"><span class="skill-name">Mybatis</span></li> -->
           </ul>
-        </li>
-        <li>
-          <h3>Js</h3>
-          <h4>JavaScript</h4>
-          <ul>
-            <li>DOM 조작, 제어</li>
-            <li>이벤트 처리</li>
-            <li>비동기 통신</li>
+        </section>
+
+        <!-- 데이터베이스 -->
+        <section class="skill-group reveal-once">
+          <h3 class="skill-group-title">Database</h3>
+          <ul class="skill-items">
+            <li class="skill-item"><img src="images/svg/Oracle.svg" alt="Oracle" class="skill-icon svg"><span class="skill-name">Oracle</span></li>
           </ul>
-        </li>
-        <li>
-          <h3>React</h3>
-          <h4>React JS</h4>
-          <ul>
-            <li>SPA 개발</li>
-            <li>전역 상태 관리</li>
-            <li>클라이언트 라우팅</li>
-            <li>CSR 방식 앱개발</li>
+        </section>
+
+        <!-- 개발도구 & 협업툴 -->
+        <section class="skill-group reveal-once">
+          <h3 class="skill-group-title">Development Tools & Collaboration Tools</h3>
+          <ul class="skill-items">
+            <li class="skill-item"><img src="images/svg/Eclipse.svg" alt="Eclipse" class="skill-icon svg"><span class="skill-name">Eclipse</span></li>
+            <li class="skill-item"><img src="images/svg/VSCode.svg" alt="Visual Studio Code" class="skill-icon svg"><span class="skill-name">VS Code</span></li>
+            <li class="skill-item"><img src="images/svg/Github.jpg" alt="GitHub" class="skill-icon svg"><span class="skill-name">GitHub</span></li>
           </ul>
-        </li>
-      </ul>
-    </div>
+        </section>
+
+      </div>
+      </div>
   </section>
 
   <!-- PROJECT -->
   <section id="project" class="project">
     <div class="inner">
-      <h2 class="title">PROJECT</h2>
-      <div class="port">
-        <div class="port-img">
-          <!-- 이미지 슬라이드 -->
-          <!-- Slider main container -->
-        <div class="swiper">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-              <img src="images/work_1.jpg" alt="산출물1">
-            </div>
-            <div class="swiper-slide">
-              <img src="images/work_2.jpg" alt="산출물2">
-            </div>
-          </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-        </div>
-        <div class="port-text">
-          <h3>프로젝트명</h3>
-          <ul>
-            <li><span>주요 기능 : </span>주요 기능 설명</li>
-            <li><span>적용 기술 : </span>HTML, CSS, JS, React, Java, Spring Boot</li>
-            <li><span>GitHub : </span>깃허브 주소</li>
-            <li><span>URL : </span>배포 주소</li>
-          </ul>
-          <div class="btn-group">
-            <a href="javascript:void(0);" class="btn">README</a>
-            <a href="javascript:void(0);" class="btn btn-brown btn-modal-img" 
-                  data-image-src="images/work_1.jpg">이미지</a>
-          </div>
-        </div>
-      </div>
-      <div class="port">
-        <div class="port-img">
-          <!-- 이미지 슬라이드 -->
-          <!-- Slider main container -->
-        <div class="swiper">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-              <img src="images/work_3.jpg" alt="산출물3">
-            </div>
-            <div class="swiper-slide">
-              <img src="images/work_4.jpg" alt="산출물4">
+      <h2 class="title">
+        <span class="main">PROJECT</span>
+        <span class="subtitle">My Works</span>
+      </h2>
+      <ul class="projects">
+        <!-- Project Card -->
+        <li class="project-card reveal-once">
+          <button class="thumb" 
+                        data-gallery="images/work_4.jpg, images/work_3.jpg, , images/work_2.jpg, , images/work_1.jpg"
+                        data-modal-img="images/work_4.jpg" 
+                        aria-label="프로젝트 이미지 확대">
+            <img src="images/work_4.jpg" alt="프로젝트 A 대표 이미지" loading="lazy">
+          </button>
+          <div class="body">
+            <h3 class="name">
+              <!-- <span class="name-icon material-symbols-outlined">auto_awesome</span> -->
+              주문 처리 API 플랫폼
+            </h3>
+            <dl class="meta">
+              <div>
+                <dt><span class="material-symbols-outlined">list_alt</span> 주요기능</dt>
+                <dd>주문/결제/환불 API, 이벤트 기반 알림, 관리자 대시보드</dd>
+              </div>
+              <div>
+                <dt><span class="material-symbols-outlined">build</span> 적용기술</dt>
+                <dd>
+                  <ul class="tags">
+                    <li class="tag" data-tech="Java">Java</li>
+                    <li class="tag" data-tech="Spring Boot">Spring Boot</li>
+                    <li class="tag" data-tech="JPA">JPA</li>
+                    <li class="tag" data-tech="PostgreSQL">PostgreSQL</li>
+                    <li class="tag" data-tech="Redis">Redis</li>
+                    <li class="tag" data-tech="AWS">AWS</li>
+                    <!-- 필요에 따라 추가 -->
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+            <div class="links">
+              <a class="btn link" href="#" target="_blank" rel="noopener">
+                <span class="material-symbols-outlined">code</span> GitHub
+              </a>
+              <a class="btn link" href="https://project-a.example.com" target="_blank" rel="noopener">
+                <span class="material-symbols-outlined">launch</span> Deploy
+              </a>
             </div>
           </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+        </li>
+        <!-- 또 하나 예시 -->
+        <li class="project-card reveal-once">
+          <button class="thumb" 
+                        data-gallery="images/work_3.jpg, images/work_4.jpg, , images/work_2.jpg, , images/work_1.jpg"
+                        data-modal-img="images/work_3.jpg" 
+                        aria-label="프로젝트 이미지 확대">
+            <img src="images/work_3.jpg" alt="추천 시스템 백엔드 대표 이미지" loading="lazy">
+          </button>
+          <div class="body">
+            <h3 class="name">추천 시스템 백엔드</h3>
+            <dl class="meta">
+              <div>
+                <dt><span class="material-symbols-outlined">list_alt</span> 주요기능</dt>
+                <dd>AB 테스트, 개인화 추천, 로그 기반 성능 리포팅</dd>
+              </div>
+              <div>
+                <dt><span class="material-symbols-outlined">build</span> 적용기술</dt>
+                <dd>
+                  <ul class="tags">
+                    <li class="tag" data-tech="Spring">Spring</li>
+                    <li class="tag" data-tech="HTML5">HTML5</li>
+                    <li class="tag" data-tech="MongoDB">MongoDB</li>
+                    <li class="tag" data-tech="Redis">Redis</li>
+                    <li class="tag" data-tech="Docker">Docker</li>
+                    <!-- 필요에 따라 추가 -->
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+            <div class="links">
+              <a class="btn link" href="#" target="_blank" rel="noopener">
+                <span class="material-symbols-outlined">code</span> GitHub
+              </a>
+              <a class="btn link" href="#" target="_blank" rel="noopener">
+                <span class="material-symbols-outlined">launch</span> Deploy
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="port-text">
-          <h3>프로젝트명</h3>
-          <ul>
-            <li><span>주요 기능 : </span>주요 기능 설명</li>
-            <li><span>적용 기술 : </span>HTML, CSS, JS, React, Java, Spring Boot</li>
-            <li><span>GitHub : </span>깃허브 주소</li>
-            <li><span>URL : </span>배포 주소</li>
-          </ul>
-          <div class="btn-group">
-            <a href="javascript:void(0);" class="btn">README</a>
-            <a href="javascript:void(0);" class="btn btn-brown btn-modal-img" 
-                  data-image-src="images/work_3.jpg">이미지</a>
+        </li>
+        <!-- 또 하나 예시 -->
+        <li class="project-card reveal-once">
+          <button class="thumb" 
+                        data-gallery="images/work_2.jpg, images/work_4.jpg, , images/work_3.jpg, , images/work_1.jpg"
+                        data-modal-img="images/work_2.jpg" 
+                        aria-label="프로젝트 이미지 확대">
+            <img src="images/work_2.jpg" alt="추천 시스템 백엔드 대표 이미지" loading="lazy">
+          </button>
+          <div class="body">
+            <h3 class="name">추천 시스템 백엔드</h3>
+            <dl class="meta">
+              <div>
+                <dt><span class="material-symbols-outlined">list_alt</span> 주요기능</dt>
+                <dd>AB 테스트, 개인화 추천, 로그 기반 성능 리포팅</dd>
+              </div>
+              <div>
+                <dt><span class="material-symbols-outlined">build</span> 적용기술</dt>
+                <dd>
+                  <ul class="tags">
+                    <li class="tag" data-tech="Spring">Spring</li>
+                    <li class="tag" data-tech="HTML5">HTML5</li>
+                    <li class="tag" data-tech="MongoDB">MongoDB</li>
+                    <li class="tag" data-tech="Redis">Redis</li>
+                    <li class="tag" data-tech="Docker">Docker</li>
+                    <!-- 필요에 따라 추가 -->
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+            <div class="links">
+              <a class="btn link" href="#" target="_blank" rel="noopener">
+                <span class="material-symbols-outlined">code</span> GitHub
+              </a>
+              <a class="btn link" href="#" target="_blank" rel="noopener">
+                <span class="material-symbols-outlined">launch</span> Deploy
+              </a>
+            </div>
           </div>
-        </div>
-      </div>
+        </li>
+        <!-- 또 하나 예시 -->
+        <li class="project-card reveal-once">
+          <button class="thumb" 
+                        data-gallery="images/work_1.jpg, images/work_4.jpg, , images/work_2.jpg, , images/work_3.jpg"
+                        data-modal-img="images/work_1.jpg" 
+                        aria-label="프로젝트 이미지 확대">
+            <img src="images/work_1.jpg" alt="추천 시스템 백엔드 대표 이미지" loading="lazy">
+          </button>
+          <div class="body">
+            <h3 class="name">추천 시스템 백엔드</h3>
+            <dl class="meta">
+              <div>
+                <dt><span class="material-symbols-outlined">list_alt</span> 주요기능</dt>
+                <dd>AB 테스트, 개인화 추천, 로그 기반 성능 리포팅</dd>
+              </div>
+              <div>
+                <dt><span class="material-symbols-outlined">build</span> 적용기술</dt>
+                <dd>
+                  <ul class="tags">
+                    <li class="tag" data-tech="Spring">Spring</li>
+                    <li class="tag" data-tech="HTML5">HTML5</li>
+                    <li class="tag" data-tech="MongoDB">MongoDB</li>
+                    <li class="tag" data-tech="Redis">Redis</li>
+                    <li class="tag" data-tech="Docker">Docker</li>
+                    <!-- 필요에 따라 추가 -->
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+            <div class="links">
+              <a class="btn link" href="#" target="_blank" rel="noopener">
+                <span class="material-symbols-outlined">code</span> GitHub
+              </a>
+              <a class="btn link" href="#" target="_blank" rel="noopener">
+                <span class="material-symbols-outlined">launch</span> Deploy
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
 
+    <!-- Modal -->
+    <div class="modal" id="imgModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <button class="modal-close" aria-label="닫기">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <div class="modal-inner">
+        <div class="slider">
+          <div class="slides" id="modalSlides"><!-- JS가 이미지 슬라이드 주입 --></div>
+
+          <!-- 좌우 화살표 -->
+          <button class="nav prev" aria-label="이전">
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          <button class="nav next" aria-label="다음">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+
+          <!-- 인디케이터/카운터 -->
+          <div class="counter">
+            <span id="slideNow">1</span>/<span id="slideTotal">1</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-backdrop"></div>
+    </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="contact scroll-spy">
+  <section id="contact" class="contact">
     <div class="inner">
-      <h2 class="title">CONTACT</h2>
-      <div class="contact-info">
-        <ul>
-          <li>
-            <a href="https://github.com/wkdwns0501" target="_blank">github.com/wkdwns0501</a>
+      <h2 class="title reveal-once">CONTACT</h2>
+
+      <div class="contact-wrap">
+        <!-- <p class="contact-desc">아래 채널을 통해 언제든지 연락 주세요.</p> -->
+
+        <ul class="contact-list">
+          <li class="reveal-once">
+            <span class="material-symbols-outlined">call</span>
+            <a href="tel:010-1234-5678">010-1234-5678</a>
           </li>
-          <li>010-1234-5678</li>
-          <li>wkdwns0501@naver.com</li>
-        </ul>
-      </div>
-      <div class="contact-sns">
-        <ul>
-          <li>
-            <a href="#인스타그램주소" target="_blank">
-              <img src="images/icon/icon_insta.png" alt="인스타그램">
-            </a>
+          <li class="reveal-once">
+            <span class="material-symbols-outlined">mail</span>
+            <a href="mailto:abc123@naver.com">abc123@naver.com</a>
           </li>
-          <li>
-            <a href="#유튜브주소" target="_blank">
-              <img src="images/icon/icon_youtube.png" alt="유튜브">
-            </a>
+          <li class="reveal-once">
+            <span class="material-symbols-outlined">code</span>
+            <a href="https://github.com/wkdwns0501" target="_blank" rel="noopener">github.com/wkdwns0501</a>
           </li>
         </ul>
       </div>
@@ -344,35 +396,11 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="footer">
     <div class="inner">
-      <p class="copyright">
-        &copy; <span class="this-year"></span>
-        Jun. All Rights Reserved.
-      </p>
+      <p>Copyright ⓒ 2025. Jun. All rights reserved.</p>
     </div>
   </footer>
-
-  <!-- IMAGE MODAL -->
-  <div id="imgModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        이미지
-        <span class="material-symbols-outlined close-btn">close</span>
-      </div>
-      <div class="modal-body">
-        <!-- 1픽셀 투명한 GIF -->
-        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="이미지">
-      </div>
-    </div>
-  </div>
-
-  <!--  SCROLL TO TOP -->
-    <div id="toTop">
-      <a href="#">
-        <span class="material-symbols-outlined">arrow_upward</span>
-      </a>
-    </div>
 
 </body>
 </html>
