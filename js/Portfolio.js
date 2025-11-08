@@ -43,15 +43,15 @@ revealLoopEls.forEach(el => revealLoopObserver.observe(el));
 
 // 프로젝트 이미지 갤러리
 (() => {
-  const modal = document.getElementById('imgModal');
-  const slidesWrap = document.getElementById('modalSlides');
+  const modal = document.querySelector('#imgModal');
+  const slidesWrap = document.querySelector('#modalSlides');
   const btnClose = modal.querySelector('.modal-close');
   const btnPrev = modal.querySelector('.nav.prev');
   const btnNext = modal.querySelector('.nav.next');
   const backdrop = modal.querySelector('.modal-backdrop');
   const counters = {
-    now: document.getElementById('slideNow'),
-    total: document.getElementById('slideTotal'),
+    now: document.querySelector('#slideNow'),
+    total: document.querySelector('#slideTotal'),
   };
 
   let gallery = [];
@@ -85,7 +85,6 @@ revealLoopEls.forEach(el => revealLoopObserver.observe(el));
     updateTransform();
 
     modal.classList.add('show');
-    modal.setAttribute('aria-hidden', 'false');
 
     // 포커스 트랩 간단 처리 (접근성 보완)
     btnClose.focus();
@@ -93,7 +92,6 @@ revealLoopEls.forEach(el => revealLoopObserver.observe(el));
 
   function closeModal() {
     modal.classList.remove('show');
-    modal.setAttribute('aria-hidden', 'true');
     gallery = [];
     index = 0;
     slidesWrap.innerHTML = '';
@@ -160,20 +158,18 @@ revealLoopEls.forEach(el => revealLoopObserver.observe(el));
 (() => {
   const header = document.querySelector('header');
   const btn = document.querySelector('.menu-toggle');
-  const nav = document.getElementById('siteNav');
+  const nav = document.querySelector('#siteNav');
   const backdrop = document.querySelector('.nav-backdrop');
   if (!header || !btn || !nav) return;
 
   const open = () => {
     header.classList.add('nav-open');
     document.body.classList.add('menu-open');
-    btn.setAttribute('aria-expanded', 'true');
     backdrop?.classList.add('show');
   };
   const close = () => {
     header.classList.remove('nav-open');
     document.body.classList.remove('menu-open');
-    btn.setAttribute('aria-expanded', 'false');
     backdrop?.classList.remove('show');
   };
 
@@ -194,3 +190,56 @@ revealLoopEls.forEach(el => revealLoopObserver.observe(el));
     if (e.key === 'Escape' && header.classList.contains('nav-open')) close();
   });
 })();
+
+// 맨 위 이동 버튼
+const toTopEl = document.querySelector('#toTop');
+
+window.addEventListener('scroll', function() {
+  if (this.window.scrollY >= 400) {
+    toTopEl.classList.add('show');
+  } else {
+    toTopEl.classList.remove('show');
+  }
+});
+
+toTopEl.addEventListener('click', function() {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+})
+
+const canvas = document.querySelector('.particles');
+const ctx = canvas.getContext("2d");
+let particles = [];
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resize);
+resize();
+
+for (let i = 0; i < 60; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 2 + 0.5,
+    dx: (Math.random() - 0.5) * 0.5,
+    dy: (Math.random() - 0.5) * 0.5
+  });
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(155,93,229,0.8)";
+    ctx.fill();
+    p.x += p.dx;
+    p.y += p.dy;
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+  });
+  requestAnimationFrame(animate);
+}
+animate();

@@ -34,14 +34,14 @@
         <img src="images/logo.png" alt="로고">
         <span class="logo-text">Jun's Portfolio</span>
       </a>
-      <button class="menu-toggle" aria-label="메뉴 열기" aria-controls="siteNav" aria-expanded="false">
+      <button class="menu-toggle">
         <span class="material-symbols-outlined">menu</span>
       </button>
       <nav id="siteNav">
         <ul>
           <li><a href="#about">About Me</a></li>
-          <li><a href="#skill">Skills</a></li>
-          <li><a href="#project">Projects</a></li>
+          <li><a href="#skill">Skill</a></li>
+          <li><a href="#project">Project</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -50,9 +50,9 @@
   <div class="nav-backdrop"></div>
 
   <!-- VISUAL -->
-  <section class="visual" id="visual" aria-label="Introduction">
+  <section class="visual" id="visual">
   <!-- 장식 애니메이션 레이어 -->
-  <div class="hero-art" aria-hidden="true"></div>
+  <div class="hero-art"></div>
   <div class="inner visual-content">
     <h1 class="hero-title reveal-loop">
       데이터 흐름을 설계하고, <br>안정성을 구축하는 백엔드 개발자 <br><span>장준</span>입니다.
@@ -71,7 +71,7 @@
   <section id="about" class="about">
     <div class="inner">
       <h2 class="title">
-        <span class="main">ABOUT</span>
+        <span class="main">ABOUT ME</span>
         <span class="subtitle">Who I Am</span>
       </h2>
       <div class="about-wrap reveal-once">
@@ -183,8 +183,7 @@
         <li class="project-card reveal-once">
           <button class="thumb" 
                         data-gallery="images/work_4.jpg, images/work_3.jpg, , images/work_2.jpg, , images/work_1.jpg"
-                        data-modal-img="images/work_4.jpg" 
-                        aria-label="프로젝트 이미지 확대">
+                        data-modal-img="images/work_4.jpg">
             <img src="images/work_4.jpg" alt="프로젝트 A 대표 이미지" loading="lazy">
           </button>
           <div class="body">
@@ -226,8 +225,7 @@
         <li class="project-card reveal-once">
           <button class="thumb" 
                         data-gallery="images/work_3.jpg, images/work_4.jpg, , images/work_2.jpg, , images/work_1.jpg"
-                        data-modal-img="images/work_3.jpg" 
-                        aria-label="프로젝트 이미지 확대">
+                        data-modal-img="images/work_3.jpg">
             <img src="images/work_3.jpg" alt="추천 시스템 백엔드 대표 이미지" loading="lazy">
           </button>
           <div class="body">
@@ -265,8 +263,7 @@
         <li class="project-card reveal-once">
           <button class="thumb" 
                         data-gallery="images/work_2.jpg, images/work_4.jpg, , images/work_3.jpg, , images/work_1.jpg"
-                        data-modal-img="images/work_2.jpg" 
-                        aria-label="프로젝트 이미지 확대">
+                        data-modal-img="images/work_2.jpg">
             <img src="images/work_2.jpg" alt="추천 시스템 백엔드 대표 이미지" loading="lazy">
           </button>
           <div class="body">
@@ -280,11 +277,12 @@
                 <dt><span class="material-symbols-outlined">build</span> 적용기술</dt>
                 <dd>
                   <ul class="tags">
-                    <li class="tag" data-tech="Spring">Spring</li>
-                    <li class="tag" data-tech="HTML5">HTML5</li>
-                    <li class="tag" data-tech="MongoDB">MongoDB</li>
+                    <li class="tag" data-tech="Java">Java</li>
+                    <li class="tag" data-tech="Spring Boot">Spring Boot</li>
+                    <li class="tag" data-tech="JPA">JPA</li>
+                    <li class="tag" data-tech="PostgreSQL">PostgreSQL</li>
                     <li class="tag" data-tech="Redis">Redis</li>
-                    <li class="tag" data-tech="Docker">Docker</li>
+                    <li class="tag" data-tech="AWS">AWS</li>
                     <!-- 필요에 따라 추가 -->
                   </ul>
                 </dd>
@@ -304,8 +302,7 @@
         <li class="project-card reveal-once">
           <button class="thumb" 
                         data-gallery="images/work_1.jpg, images/work_4.jpg, , images/work_2.jpg, , images/work_3.jpg"
-                        data-modal-img="images/work_1.jpg" 
-                        aria-label="프로젝트 이미지 확대">
+                        data-modal-img="images/work_1.jpg">
             <img src="images/work_1.jpg" alt="추천 시스템 백엔드 대표 이미지" loading="lazy">
           </button>
           <div class="body">
@@ -343,8 +340,8 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal" id="imgModal" aria-hidden="true" role="dialog" aria-modal="true">
-      <button class="modal-close" aria-label="닫기">
+    <div class="modal" id="imgModal" role="dialog">
+      <button class="modal-close">
         <span class="material-symbols-outlined">close</span>
       </button>
       <div class="modal-inner">
@@ -352,10 +349,10 @@
           <div class="slides" id="modalSlides"><!-- JS가 이미지 슬라이드 주입 --></div>
 
           <!-- 좌우 화살표 -->
-          <button class="nav prev" aria-label="이전">
+          <button class="nav prev">
             <span class="material-symbols-outlined">chevron_left</span>
           </button>
-          <button class="nav next" aria-label="다음">
+          <button class="nav next">
             <span class="material-symbols-outlined">chevron_right</span>
           </button>
 
@@ -402,5 +399,11 @@
     </div>
   </footer>
 
+  <!--  SCROLL TO TOP -->
+  <div id="toTop">
+    <a href="#">
+      <span class="material-symbols-outlined">arrow_upward</span>
+    </a>
+  </div>
 </body>
 </html>
