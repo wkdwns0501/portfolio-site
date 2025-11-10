@@ -7,9 +7,6 @@ body {
   background: #0b0b10;
   color: #e9e9ef;
 }
-@media (prefers-color-scheme: light) {
-  body { background: #f7f7fa; color: #1b1c24; }
-}
 /* 헤더 높이 변수 (값에 맞게 조절) */
 :root { --header-h: 68px; }
 @media (max-width: 767px) {
@@ -107,18 +104,6 @@ header.scrolled {
   background-size: auto, cover;
   background-repeat: no-repeat, no-repeat;
   background-attachment: scroll, fixed;
-}
-@media (prefers-color-scheme: light) {
-  .visual {
-    color: #1b1c24;
-    background-image:
-      linear-gradient(180deg, rgba(247,247,250,0.35), rgba(247,247,250,0.85)),
-      url("../images/bgimg.png");
-    background-position: center, center;
-    background-size: auto, cover;
-    background-repeat: no-repeat, no-repeat;
-    background-attachment: scroll, fixed;
-  }
 }
 /* 섹션 높이: 화면 가득 (헤더 높이 보정) */
 .visual > .inner {
@@ -343,19 +328,6 @@ header.scrolled {
   filter: brightness(1.15); text-shadow: 0 0 8px rgba(243, 232, 255, 0.8);
 }
 .about-btn a:active { transform: translateY(0); box-shadow: 0 6px 16px rgba(167,130,255,.28); }
-@media (prefers-color-scheme: light) {
-  .about { background:
-    radial-gradient(900px 520px at 8% 0%, rgba(125,95,255,.10), transparent 60%),
-    radial-gradient(800px 500px at 100% 30%, rgba(125,95,255,.08), transparent 60%);
-  }
-  .about-img, .about-text {
-    background: #ffffff;
-    border-color: rgba(0,0,0,.06);
-    box-shadow: 0 10px 24px rgba(0,0,0,.10);
-  }
-  .about-text li { color: #5e6173; }
-  .about-text h3 { color: #5e587a; }
-}
 /* 스크롤 등장 애니메이션 */
 /* 기본 상태 */
 .reveal-once, .reveal-loop {
@@ -483,16 +455,6 @@ header.scrolled {
   height: 100%;
   display: flex;
   align-items: center;
-}
-@media (prefers-color-scheme: light) {
-  .skill {
-    background:
-      radial-gradient(900px 520px at 8% 0%, rgba(125,95,255,.10), transparent 60%),
-      radial-gradient(800px 500px at 100% 30%, rgba(125,95,255,.08), transparent 60%);
-  }
-  .skill-item { background: #ffffff; border-color: rgba(0,0,0,.06); box-shadow: 0 8px 18px rgba(0,0,0,.08); }
-  .skill-item:hover { filter: brightness(.4) drop-shadow(0 0 6px rgba(125,95,255,.45)); }
-  .skill-name { color: #333; }
 }
 
 /* ========== Projects ========== */
@@ -764,25 +726,6 @@ header.scrolled {
 .tag[data-tech="HTML5"]        { --bg: rgba(255,87,34,.12);  --fg: #ffb199; --bd: rgba(255,87,34,.28); }
 .tag[data-tech="CSS3"]         { --bg: rgba(3,169,244,.12);  --fg: #a8dcff; --bd: rgba(3,169,244,.28); }
 .tag[data-tech="JavaScript"]   { --bg: rgba(255,235,59,.12); --fg: #fff27a; --bd: rgba(255,235,59,.28); }
-@media (prefers-color-scheme: light) {
-  .project {
-    background:
-      radial-gradient(900px 520px at 8% 0%, rgba(125,95,255,.10), transparent 60%),
-      radial-gradient(800px 500px at 100% 30%, rgba(125,95,255,.08), transparent 60%);
-  }
-  .project-card { background: #fff; border-color: rgba(0,0,0,.06); box-shadow: 0 10px 24px rgba(0,0,0,.10); }
-  .modal-inner { background: #fff; }
-  .tag {
-    --bg: rgba(0,0,0,0.04);
-    --fg: #3a3560;
-    --bd: rgba(0,0,0,0.08);
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1) inset;
-  }
-  .tag:hover {
-    background: rgba(125,95,255,0.12);
-    color: #4a3acb;
-  }
-}
 
 /* ========== Contact ========== */
 .contact {
@@ -883,20 +826,6 @@ header.scrolled {
 .contact-list li:hover a {
   color: #cbb9ff;
 }
-@media (prefers-color-scheme: light) {
-  .contact {
-    background:
-      radial-gradient(900px 520px at 8% 0%, rgba(125,95,255,.10), transparent 60%),
-      radial-gradient(800px 500px at 100% 30%, rgba(125,95,255,.08), transparent 60%);
-  }
-  .contact-list li {
-    background: #fff;
-    border-color: rgba(0,0,0,.06);
-    box-shadow: 0 6px 20px rgba(0,0,0,.10);
-  }
-  .contact-list li a { color: #333; }
-  .contact-list li:hover a { color: #7f5eff; }
-}
 
 /* ========== Footer ========== */
 .footer {
@@ -938,19 +867,6 @@ header.scrolled {
   background: linear-gradient(90deg, rgba(167,130,255,0) 0%, rgba(167,130,255,0.6) 50%, rgba(167,130,255,0) 100%);
   box-shadow: 0 0 24px rgba(167,130,255,0.45);
   animation: glowline 6s ease-in-out infinite alternate;
-}
-@media (prefers-color-scheme: light) {
-  .footer {
-    background: #f7f7fa;
-    border-top: 1px solid rgba(167,130,255,0.2);
-    color: #555;
-  }
-  .footer p { color: #6a5ecc; text-shadow: none; }
-  .footer:hover p { color: #4b33cc; }
-  .footer::before {
-    background: linear-gradient(90deg, rgba(125,95,255,0) 0%, rgba(125,95,255,0.5) 50%, rgba(125,95,255,0) 100%);
-    box-shadow: 0 0 18px rgba(125,95,255,0.35);
-  }
 }
 
 /* === menu 버튼 === */
@@ -1292,7 +1208,7 @@ header.scrolled {
   .hero-title::after { width: 72%; }
 }
 /* 모바일 + 라이트 모드 (겹침 방지용) */
-@media (max-width: 767px) and (prefers-color-scheme: light) {
+@media (max-width: 767px) {
   .visual {
     background-image:
       linear-gradient(180deg, rgba(247,247,250,0.35), rgba(247,247,250,0.85)),
