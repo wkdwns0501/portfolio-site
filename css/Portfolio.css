@@ -1232,8 +1232,8 @@ header.scrolled {
     align-items: center;
     gap: 14px;
   }
-  .contact-list li {
-    font-size: 14px;
+  .contact-list li a {
+    font-size: 15px;
   }
   .contact-list span.material-symbols-outlined {
     font-size: 20px;
