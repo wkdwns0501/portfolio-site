@@ -101,6 +101,7 @@ revealLoopEls.forEach(el => revealLoopObserver.observe(el));
     slidesWrap.style.transform = `translateX(${-index * 100}%)`;
   }
   function updateCounter() {
+    // 페이지 계산
     counters.now.textContent = String(index + 1);
     counters.total.textContent = String(gallery.length);
     // 화살표 보임/숨김 (한 장이면 화살표 숨김)
